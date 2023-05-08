@@ -1,12 +1,13 @@
-const Detail = async () => {
-  const users = await fetch('https://jsonplaceholder.typicode.com/users')
-  const usersData = await users.json()
+import { Suspense } from 'react'
+import UserList from './UserList'
+
+const Detail = () => {
   return (
     <>
       <h1>detailページ</h1>
-      {usersData.map((user: any) => {
-        return <p key={user.id}>{user.name}</p>
-      })}
+      <Suspense fallback={<p className="mt-4">ユーザデータ　Loading...</p>}>
+        <UserList />
+      </Suspense>
     </>
   )
 }
