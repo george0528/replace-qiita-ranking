@@ -1,5 +1,7 @@
 const UserList = async () => {
-  const users = await fetch('https://jsonplaceholder.typicode.com/users')
+  const users = await fetch('https://jsonplaceholder.typicode.com/users', {
+    cache: 'no-store'
+  })
   const usersData = await users.json()
   return (
     <ul className="flex flex-col items-center justify-center py-2">
