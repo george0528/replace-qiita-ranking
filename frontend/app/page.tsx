@@ -1,6 +1,7 @@
 import Ranks from './Ranks'
 import { Suspense } from 'react'
 import { Loader } from './common/components';
+import { Metadata } from 'next';
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
@@ -11,4 +12,8 @@ export default function Home() {
       </Suspense>
     </main>
   )
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {title: 'Home'}
 }
