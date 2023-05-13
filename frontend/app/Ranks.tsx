@@ -18,7 +18,6 @@ type TagsEntity = {
 }
 
 const Ranks = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000))
   const apiUrl = process.env.API_URL + '/ranking?type=1'
   const ranks = await fetch(apiUrl, {cache: 'no-store'})
   const ranksData: RankEntity[] = await ranks.json()
