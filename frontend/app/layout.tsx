@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/about/detail">Detail</Link>
-            <Link href="/random">Random</Link>
+            <Link href="/random" prefetch={false}>Random</Link>
           </div>
           {children}
         </div>
